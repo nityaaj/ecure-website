@@ -1,12 +1,12 @@
 
 const ContactUs = () => {
     return (
-        <div className="max-w-full mx-auto p-6 bg-[#2d6a4f] rounded-lg shadow-md mb-10">
+        <div className="max-w-full p-6 bg-[#2d6a4f] rounded-lg shadow-md mb-10 ">
             <div className=" w-full">
                 <h2 className="text-3xl text-center text-white font-bold mb-6"> Contact Us</h2>
                 <form action="">
                     <div className="grid grid-cols-2 gap-6">
-
+                     
                         <div>
                             <label className="block text-white text-md font-semibold mb-2" htmlFor=""> First Name</label>
                             <input placeholder="Jone" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none focus:text-white focus:border-gray-500" type="text" />

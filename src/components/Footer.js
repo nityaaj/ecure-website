@@ -4,6 +4,8 @@
 // import footer3 from "../assets/images/f3.png"
 // import footer4 from "../assets/images/f4.webp"
 
+import Image from "next/image"
+
 const Footer = () => {
     return (
         <div className="mx-auto max-w-[1920px] h-auto bg-[#F6FFF8] text-slate-900">
@@ -13,10 +15,15 @@ const Footer = () => {
                     <img src="logo.png" className="max-w-[154px] h-[60px] bg-transparent" />
                 </div>
 
-                <div className="text-sm">
+                <div className="text-sm h-[60px] w-[154px]">
                     {/* © Copyright 2023, All Rights Reserved by E-Cure Environment */}
-                    <img src="f4.webp" className="bg-[#F6FFF8]" />
-
+                    <Image
+                        src="/make-india-logo.png"
+                        className="h-[60px] max-w-[154px]"
+                        width={140}
+                        height={60}
+                        objectFit="cover"
+                    />
                 </div>
 
                 <div className="my-2 px-4 flex gap-3">

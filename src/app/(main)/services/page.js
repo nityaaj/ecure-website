@@ -56,8 +56,7 @@ const Services = () => {
     ]
 
     return (
-        <div className="max-w-[1920px] mx-auto bg-[#F4F4F6] py-8 px-10 my-10 rounded-md">
-            <Clients />
+        <div className="max-w-[1920px] mx-auto  py-8 px-10 my-10 rounded-md">
             <div className="text-center">
                 <h1 className="text-3xl font-bold py-10"> Our Services</h1>
                 <h1 className="text-[#5A5A5A] pb-4"> E-Cure Environment is an independent company offering high quality technical services in environmental consulting, water and wastewater treatment, field sampling, environmental testing and High quality ETP chemical.</h1>
