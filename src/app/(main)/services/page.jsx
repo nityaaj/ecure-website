@@ -7,7 +7,6 @@
 // import service6 from "../assets/images/S6.jpg"
 // import Clients from "./Clients"
 
-import Clients from "@/components/Clients"
 
 const Services = () => {
     const servicesData = [
