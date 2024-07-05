@@ -11,8 +11,13 @@ export const getFeaturedImages = async () => {
         }`;
 
     const data = await client.fetch(query);
-
-    return data;
+    const images = data.map((doc) => {
+        return {
+            title: doc.title,
+            imageUrl: doc.imageUrl
+        }
+    });
+    return images;
 }
 
 export const getAllImages = async (tag) => {
@@ -24,13 +29,20 @@ export const getAllImages = async (tag) => {
         tags
         }`;
 
-    const data = await client.fetch(query);
+    const params = { tag };
 
-    return data;
+    const data = await client.fetch(query, params);
+    const images = data.map((doc) => {
+        return {
+            title: doc.title,
+            imageUrl: doc.imageUrl
+        }
+    });
+    return images;
 }
 
 export const getAllImageTags = async () => {
-    const query = `*[_type == "Gallery"] {
+    const query = groq`*[_type == "Gallery"] {
         tags
       }`;
     const documents = await client.fetch(query);
@@ -38,4 +50,42 @@ export const getAllImageTags = async () => {
     const uniqueTags = [...new Set(tags)];
 
     return uniqueTags;
+}
+
+export const getAllServicesList = async () => {
+    const query = groq`*[_type == "service"] {
+        slug,
+        title,
+        description,
+        "imageUrl": image.asset->url,
+      }`;
+    const documents = await client.fetch(query);
+    console.log(documents);
+    return documents;
+}
+
+export const getFeaturedServicesList = async () => {
+    const query = groq`*[_type == "service" && featured == true] {
+        slug,
+        title,
+        description,
+        "imageUrl": image.asset->url,
+      }`;
+    const documents = await client.fetch(query);
+    return documents;
+}
+
+export const getServicesDetails = async (slug) => {
+    const query = groq`*[_type == "service" && $slug == slug] {
+    _id,
+        slug,
+        title,
+        description,
+        "imageUrl": image.asset->url,
+        subservices,
+        content
+      }`;
+    const params = { slug }
+    const documents = await client.fetch(query, params);
+    return documents;
 }

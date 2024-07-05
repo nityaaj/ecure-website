@@ -23,9 +23,9 @@ export default function NavBar() {
           {/* <img src="../assets/image 19 Palette.png" className="flex justify-start w-[154px] h-[60px]"/> */}
           <Link href={"/"}> Home</Link>
           <Link href={"/#about"}> About Us</Link>
-          <Link href={"/#services"}> Services</Link>
+          <Link href={"/services"}> Services</Link>
           <Link href={"/#projects"}> Projects</Link>
-          <Link href={"/#gallery"}> Gallery</Link>
+          <Link href={"/gallery"}> Gallery</Link>
           <Link href={"/contact-us"}>
             <div className="md:block hidden">
               <button className="px-5 py-2 bg-[#1B8733] text-white rounded-lg">

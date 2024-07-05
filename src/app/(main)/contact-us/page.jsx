@@ -9,22 +9,22 @@ const ContactUs = () => {
                      
                         <div>
                             <label className="block text-white text-md font-semibold mb-2" htmlFor=""> First Name</label>
-                            <input placeholder="Jone" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none focus:text-white focus:border-gray-500" type="text" />
+                            <input placeholder="Jone" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none  focus:border-gray-500" type="text" />
                         </div>
 
                         <div>
                             <label className="block text-white text-md font-semibold mb-2" htmlFor=""> Last Name</label>
-                            <input placeholder="Doe" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none focus:text-white focus:border-gray-500" type="text" />
+                            <input placeholder="Doe" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none  focus:border-gray-500" type="text" />
                         </div>
 
                         <div>
                             <label className="block text-white text-md font-semibold mb-2" htmlFor=""> Email address</label>
-                            <input placeholder="jone.01@gmail.com" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none focus:text-white focus:border-gray-500" type="text" />
+                            <input placeholder="jone.01@gmail.com" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none  focus:border-gray-500" type="text" />
                         </div>
 
                         <div>
                             <label className="block text-white text-md font-semibold mb-2" htmlFor=""> Phone </label>
-                            <input placeholder="+91 ***** *****" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none focus:text-white focus:border-gray-500" type="text" />
+                            <input placeholder="+91 ***** *****" className="w-full px-3 py-2 border rounded-lg bg-white focus:outline-none  focus:border-gray-500" type="text" />
                         </div>
                     </div>
 
