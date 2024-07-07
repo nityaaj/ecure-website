@@ -2,7 +2,7 @@
 
 const About = () => {
     return (
-        <div className="max-w-[1920px] mx-auto grid grid-cols-2 sm:col-span-2 gap-5 my-20">
+        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
             <div>
                 <img src="aboutImg.png" />
             </div>

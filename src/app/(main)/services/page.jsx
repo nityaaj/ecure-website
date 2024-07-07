@@ -12,7 +12,7 @@ import { getFeaturedServicesList } from "../../../sanity/sanity.query";
 const Services = async () => {
   const featuredServices = await getFeaturedServicesList();
   return (
-    <div className="max-w-[1920px] mx-auto  py-8 px-10 my-10 rounded-md">
+    <div className="mx-auto rounded-md mb-20">
       <div className="text-center">
         <h1 className="text-3xl font-bold py-10"> Our Services</h1>
         <h1 className="text-[#5A5A5A] pb-4">
@@ -24,7 +24,7 @@ const Services = async () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-3 gap-4 mt-7">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         {featuredServices.map((service, index) => {
           return (
             <ServiceCardComponent

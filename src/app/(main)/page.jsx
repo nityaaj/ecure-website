@@ -15,14 +15,10 @@ const Hero = async () => {
 
   return (
     <main className="">
-      <div
-        className={`h-[calc(100svh-100px)] flex `}
-        style={{
-          background: `url('/desktopbg.png') no-repeat center center`,
-          backgroundSize: "100% 100%",
-        }}
+      <section
+        className="py-10 mx-auto min-h-[calc(100vh-150px)] flex justify-center items-center bg-[url('/desktopbg.png')] bg-cover bg-center"
       >
-        <div className="flex flex-col md:flex-row w-full justify-center items-center px-24">
+        <div className="flex flex-col-reverse md:flex-row w-full gap-4 justify-center items-center px-24">
           <div className="flex flex-col justify-center items-start gap-8">
             <span className="bg-[#B0FFD3] px-4 py-2 rounded-full leading-loose">
               E-Cure Environment:
@@ -33,23 +29,32 @@ const Hero = async () => {
               <br />
               Operations
             </h1>
-            <p className="overflow-ellipsis w-1/2">
+            <p className="overflow-ellipsis w-1/2 hidden md:block">
               E-Cure Environment is a privately held company that offers
               high-quality technical services in environmental consulting, water
               and wastewater treatment, field sampling, environmental testing,
               and ETP chemical.
             </p>
-            <button className="px-5 py-2 bg-[#1B8733] text-white rounded-lg">
+            <button className="px-5 py-2 bg-[#1B8733] text-white rounded-lg hidden md:block">
               Contact Us
             </button>
           </div>
-          <div className="basis-1/2">
+          <div className="md:min-w-[500px]">
             <div className="rounded-tl-[20%] rounded-br-[20%] overflow-hidden">
               <img src="heroimg.png" className=" h-full w-full" />
             </div>
           </div>
         </div>
-        {/* <div className='max-w-[1920px]  flex items-center justify-center h-full px-24 gap-10'>
+      </section>
+      {/* <div
+        className={`h-[calc(100svh-100px)] `}
+        style={{
+          background: `url('/desktopbg.png') no-repeat center center`,
+          backgroundSize: "100% 100%",
+        }}
+      >
+         */}
+      {/* <div className='max-w-[1920px]  flex items-center justify-center h-full px-24 gap-10'>
           <div className='basis-[50%] flex flex-col items-start justify-center'>
             <div className=' mb-4'>
               <h3 className='bg-[#B0FFD3] w-fit rounded-xl px-5 pb-1 text-slate-900 font-medium'> E- cure Enviornment</h3>
@@ -68,7 +73,7 @@ const Hero = async () => {
             <img src="heroimg.png" className='rounded-[20%] h-full w-full' />
           </div>
         </div> */}
-      </div>
+      {/* </div> */}
       <section className="px-20" id="about">
         <About />
       </section>
@@ -86,7 +91,10 @@ const Hero = async () => {
         <div className="my-10 flex max-h-fit flex-col justify-center items-center gap-5">
           <h1 className="text-3xl font-bold text-center">Gallery</h1>
           <FeaturedImages featuredImages={featuredImages} />
-          <a href="/gallery?type=All" className="bg-[#1B8733] text-white font-semibold rounded-md px-4 py-2 text-lg">
+          <a
+            href="/gallery?type=All"
+            className="bg-[#1B8733] text-white font-semibold rounded-md px-4 py-2 text-lg"
+          >
             View More
           </a>
         </div>
