@@ -1,6 +1,6 @@
 import { groq } from "next-sanity";
 import client from "./sanity.client";
-
+import { cache } from "../lib/cache";
 
 export const getFeaturedImages = async () => {
     const query = groq`*[_type == "Gallery" && "Featured" in tags] {
@@ -41,7 +41,7 @@ export const getAllImages = async (tag) => {
     return images;
 }
 
-export const getAllImageTags = async () => {
+export const getAllImageTags = cache(async () => {
     const query = groq`*[_type == "Gallery"] {
         tags
       }`;
@@ -50,9 +50,11 @@ export const getAllImageTags = async () => {
     const uniqueTags = [...new Set(tags)];
 
     return uniqueTags;
-}
+}, ["/gallery", "getAllImageTags"], {
+    revalidate: 60 * 60 * 24 // 24 hours
+})
 
-export const getAllServicesList = async () => {
+export const getAllServicesList = cache(async () => {
     const query = groq`*[_type == "service"] {
         slug,
         title,
@@ -62,7 +64,9 @@ export const getAllServicesList = async () => {
     const documents = await client.fetch(query);
     console.log(documents);
     return documents;
-}
+}, ["/services", "getAllServicesList"], {
+    revalidate: 60 * 60 * 24 // 24 hours
+});
 
 export const getFeaturedServicesList = async () => {
     const query = groq`*[_type == "service" && featured == true] {

@@ -4,43 +4,43 @@ import React from "react";
 import urlFor from "../utils/sanityImageUrlBuilder";
 
 const ClientImages = ({ imagesToRender }) => {
-  const [currentImage, setCurrentImage] = React.useState(0);
-  const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
-  const [imageCount, setImageCount] = React.useState(0);
+//   const [currentImage, setCurrentImage] = React.useState(0);
+//   const [currentImageIndex, setCurrentImageIndex] = React.useState(0);
+//   const [imageCount, setImageCount] = React.useState(0);
 
-  const handleNext = () => {
-    if (currentImageIndex < imageCount - 1) {
-      setCurrentImageIndex(currentImageIndex + 1);
-      setCurrentImage(currentImageIndex + 1);
-    } else {
-        setCurrentImageIndex(0);
-        setCurrentImage(0);
-    }
-  };
+//   const handleNext = () => {
+//     if (currentImageIndex < imageCount - 1) {
+//       setCurrentImageIndex(currentImageIndex + 1);
+//       setCurrentImage(currentImageIndex + 1);
+//     } else {
+//         setCurrentImageIndex(0);
+//         setCurrentImage(0);
+//     }
+//   };
 
-  const handlePrev = () => {
-    if (currentImageIndex > 0) {
-      setCurrentImageIndex(currentImageIndex - 1);
-      setCurrentImage(currentImageIndex - 1);
-    } else {
-        setCurrentImageIndex(imageCount - 1);
-        setCurrentImage(imageCount - 1);
-    }
-  };
+//   const handlePrev = () => {
+//     if (currentImageIndex > 0) {
+//       setCurrentImageIndex(currentImageIndex - 1);
+//       setCurrentImage(currentImageIndex - 1);
+//     } else {
+//         setCurrentImageIndex(imageCount - 1);
+//         setCurrentImage(imageCount - 1);
+//     }
+//   };
 
-  React.useEffect(() => {
-    setImageCount(imagesToRender.length);
-  }, [imagesToRender]);
+//   React.useEffect(() => {
+//     setImageCount(imagesToRender.length);
+//   }, [imagesToRender]);
 
-  React.useEffect(() => {
-    setCurrentImageIndex(0);
-    setCurrentImage(0);
-  }, [imagesToRender]);
+//   React.useEffect(() => {
+//     setCurrentImageIndex(0);
+//     setCurrentImage(0);
+//   }, [imagesToRender]);
 
-  const handleImageClick = (index) => {
-    setCurrentImage(index);
-    setCurrentImageIndex(index);
-  };
+//   const handleImageClick = (index) => {
+//     setCurrentImage(index);
+//     setCurrentImageIndex(index);
+//   };
 
   return (
     <>
