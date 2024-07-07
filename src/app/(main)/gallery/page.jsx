@@ -1,21 +1,20 @@
 import {
   getAllImageTags,
   getAllImages,
-  getFeaturedImages
+  getFeaturedImages,
 } from "../../../sanity/sanity.query";
-import ClientTagButton from "../../../components/ClientTagButton"
+import ClientTagButton from "../../../components/ClientTagButton";
+import ClientImages from "../../../components/ClientImages";
 
 const Gallery = async ({ searchParams }) => {
   const allImageTags = await getAllImageTags();
 
   const fetchImageBasedOnTag = async (tag) => {
-    const allImages = await getAllImages(tag)
-    return allImages
-  }
-  function handleDelete() {
-
-  }
-  let imagesToRender = await fetchImageBasedOnTag(`${searchParams['type']}`);
+    const allImages = await getAllImages(tag);
+    return allImages;
+  };
+  function handleDelete() {}
+  let imagesToRender = await fetchImageBasedOnTag(`${searchParams["type"]}`);
 
   return (
     <div className="max-w-[1920] mx-auto text-center my-10 min-h-[calc(100svh-200px)]">
@@ -28,24 +27,15 @@ const Gallery = async ({ searchParams }) => {
           {allImageTags.map((tag, i) => (
             <ClientTagButton
               title={tag}
-              isActive={searchParams['type'] === tag}
+              isActive={searchParams["type"] === tag}
             />
           ))}
         </div>
       </div>
-      {/* Masonry Grid */}
-      <div
-        className="mx-24 gap-3 columns-2 md:columns-3 lg:columns-4 xl:columns-5 [&>img:not(:first-child)]:mt-5"
-      >
-        {imagesToRender.map((i, index) =>
-        (
-          <img key={index} src={i.imageUrl} alt={i.title} className="rounded-lg"/>
-        )
-        )}
-      </div>
+
+      <ClientImages imagesToRender={imagesToRender} />
     </div>
   );
 };
 
 export default Gallery;
-

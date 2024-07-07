@@ -12,38 +12,42 @@ const ServiceDetailPage = async ({ params }) => {
   const services = await getServicesList();
 
   return (
-    <div className="flex w-full h-full max-w-screen-xl mx-auto max-h-svh overflow-hidden">
-      <div
-        className="h-svh w-64 bg-gray-100 space-y-2 "
-      >
+    <div
+      className="flex w-full h-full max-w-screen-xl mx-auto"
+      // max-h-svh overflow-hidden
+    >
+      <div className="h-svh w-64 bg-gray-100 space-y-2 ">
         <ServicesSideBar
           services={services}
-          selectedServiceId={serviceDetails._id}
+          // selectedServiceId={serviceDetails._id}
         />
       </div>
-      <main className="flex-1 p-4 overflow-y-scroll">
-        <div key={serviceDetails._id}>
+      <main
+        className="flex-1 p-4  mb-10"
+        // overflow-y-scroll
+      >
+        <div key={serviceDetails.slug}>
           <h1 className="text-3xl font-bold py-10">{serviceDetails.title}</h1>
           <p className="text-[#5A5A5A] pb-4">{serviceDetails.description}</p>
 
-          <div className="w-full h-[500px]">
+          <div className="w-full h-fit">
             <img
-              src={serviceDetails.imageUrl + "?h=500"}
+              src={serviceDetails.imageUrl + "?"}
               alt={serviceDetails.title}
+              // className="aspect-video"
             />
           </div>
-
           <PortableText
-            blocks={serviceDetails.content}
-            // listNestingMode="direct"
+            key={serviceDetails.slug}
+            value={serviceDetails.content}
           />
 
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-7"
-            style={{ display: "grid" }}
-          >
-            {serviceDetails.subservices &&
-              serviceDetails.subservices.map((subservice) => (
+          {serviceDetails.subservices && (
+            <div
+              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-7"
+              style={{ display: "grid" }}
+            >
+              {serviceDetails.subservices.map((subservice) => (
                 <div
                   className="shadow-md bg-[#F6FFF8] rounded-md overflow-hidden h-min"
                   key={subservice.slug}
@@ -73,7 +77,8 @@ const ServiceDetailPage = async ({ params }) => {
                   </div>
                 </div>
               ))}
-          </div>
+            </div>
+          )}
         </div>
       </main>
     </div>

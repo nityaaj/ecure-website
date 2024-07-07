@@ -4,7 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
 
-const ServicesSideBar = ({ services, selectedServiceId }) => {
+const ServicesSideBar = ({ services }) => {
   const serviceTree = buildTree(services);
 
   return (

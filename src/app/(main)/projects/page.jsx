@@ -13,7 +13,7 @@ const Projects = () => {
 
                 <div className="basis-[65%] bg-[#F6FFF8] py-4 px-4">
                     <div className="grid grid-cols-3 gap-6">
-                        {Array.from({ length: 6 }).map((_, i) => <img key={i} src={`project${i + 1}.png`} />)}
+                        {Array.from({ length: 6 }).map((_, i) => <img key={i} src={`/project${i + 1}.png`} />)}
                     </div>
                 </div>
             </div>
