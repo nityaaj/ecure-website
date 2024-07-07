@@ -1,4 +1,4 @@
-import Clients from '@/components/Clients'
+import Clients from '../../../components/Clients'
 import React from 'react'
 
 const page = () => {
