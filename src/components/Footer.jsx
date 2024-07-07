@@ -12,7 +12,7 @@ const Footer = () => {
 
             <div className="flex justify-between items-center">
                 <div className=" px-4">
-                    <img src="logo.png" className="max-w-[154px] h-[60px] bg-transparent" />
+                    <img src="/logo.png" className="max-w-[154px] h-[60px] bg-transparent" />
                 </div>
 
                 <div className="text-sm h-[60px] w-[154px]">
@@ -27,9 +27,9 @@ const Footer = () => {
                 </div>
 
                 <div className="my-2 px-4 flex gap-3">
-                    <img src="f1.png" />
-                    <img src="f2.png" />
-                    <img src="f3.png" />
+                    <img src="/f1.png" />
+                    <img src="/f2.png" />
+                    <img src="/f3.png" />
                 </div>
             </div>
 

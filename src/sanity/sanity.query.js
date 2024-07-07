@@ -76,16 +76,47 @@ export const getFeaturedServicesList = async () => {
 }
 
 export const getServicesDetails = async (slug) => {
-    const query = groq`*[_type == "service" && $slug == slug] {
-    _id,
+    // const query = groq`*[_type == "service" && $slug == slug] {
+    // _id,
+    //     slug,
+    //     title,
+    //     description,
+    //     "imageUrl": image.asset->url,
+    //     subservices,
+    //     content
+    //   }`;
+
+    const query = groq`*[_type == "service" && $slug == slug]{
+        _id,
         slug,
         title,
         description,
+        content,
         "imageUrl": image.asset->url,
-        subservices,
-        content
-      }`;
+        subservices[]->{
+          slug,
+          title,
+          description,
+          "imageUrl": image.asset->url
+        }
+      }[0]`;
     const params = { slug }
     const documents = await client.fetch(query, params);
+
+    return documents;
+}
+
+export const getServicesList = async () => {
+    const query = groq`*[_type == "service"] {
+        _id,
+        slug,
+        title,
+        subservices[]->{
+            _id,
+            slug,
+            title,
+            }
+      }`;
+    const documents = await client.fetch(query);
     return documents;
 }

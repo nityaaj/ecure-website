@@ -19,7 +19,6 @@ const Hero = async () => {
         className={`h-[calc(100svh-100px)] flex `}
         style={{
           background: `url('/desktopbg.png') no-repeat center center`,
-          // backgroundImage: `url('/desktopbg.png')`,
           backgroundSize: "100% 100%",
         }}
       >

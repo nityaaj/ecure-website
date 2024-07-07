@@ -13,8 +13,7 @@ const FeaturedImages = ({ featuredImages }) => {
         <Image
           src={image.imageUrl}
           className={
-            // "w-full h-full" +
-            i == 0 ? " lg:row-span-2 lg:col-span-2" : ""
+            "rounded-lg" + (i == 0 ? " lg:row-span-2 lg:col-span-2" : "")
           }
           width={500}
           height={500}
