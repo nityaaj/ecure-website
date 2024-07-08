@@ -8,6 +8,7 @@
 // import Clients from "./Clients"
 import Link from "next/link";
 import { getFeaturedServicesList } from "../../../sanity/sanity.query";
+import Card from "../../../components/Card"
 
 const Services = async () => {
   const featuredServices = await getFeaturedServicesList();
@@ -24,17 +25,19 @@ const Services = async () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {featuredServices.map((service, index) => {
           return (
-            <ServiceCardComponent
-              key={index}
-              image={service.imageUrl}
-              title={service.title}
-              subTitlte={service.description}
-              buttonText="Read More"
-              buttonLink={`/services/${service.slug}`}
-            />
+            <div className="w-full h-full">
+              <ServiceCardComponent
+                key={index}
+                image={service.imageUrl}
+                title={service.title}
+                subTitlte={service.description}
+                buttonText="Read More"
+                buttonLink={`/services/${service.slug}`}
+              />
+            </div>
           );
         })}
       </div>
@@ -52,21 +55,25 @@ function ServiceCardComponent({
   buttonLink,
 }) {
   return (
-    <div className="shadow-md bg-[#F6FFF8] rounded-md overflow-hidden">
-      <div className="px-4 py-4">
-        <img src={image} className="rounded-md" />
-      </div>
+    // <div className="shadow-md rounded-md overflow-hidden relative z-0">
+    //   <img src={image} className="rounded-md aspect-square" />
+    //   <div className="absolute w-full h-full top-0 bottom-0 left-0 right-0" style={{
+    //     background: "linear-gradient(180deg, #D9D9D900 0%, #000 100%);",
+    //     backgroundColor:"transparent",
+    //   }} />
+    //   <p
+    //     className="absolute text-white bottom-[5%] left-[5%]"
+    //   >
+    //     {title}
+    //   </p>
+    //   {/* </div> */}
+    // </div>
 
-      <div className="  mb-4 text-left px-4 ">
-        <h1 className="text-xl font-sans font-medium pb-2"> {title} </h1>
-        <h3> {subTitlte} </h3>
-        <Link
-          href={buttonLink}
-          className=" text-white hover:bg-gray-200 font-medium hover:text-[#1B8733] bg-[#1B8733] py-2 px-3 mt-3 w-full rounded-md"
-        >
-          {buttonText}{" "}
-        </Link>
-      </div>
-    </div>
+    <Card 
+       cardImage={image}
+       cardTitle={title}
+       cardLink={buttonLink}
+
+    />
   );
 }

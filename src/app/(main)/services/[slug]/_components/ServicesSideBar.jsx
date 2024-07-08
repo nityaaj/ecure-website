@@ -9,7 +9,7 @@ const ServicesSideBar = ({ services }) => {
 
   return (
     <div className=" p-4">
-      <h2 className="font-semibold text-2xl  mb-2">OUR SERVICES</h2>
+      <h2 className="font-semibold text-2xl  mb-2">Our Services</h2>
       <div
         className="border-b border-gray-300"
         style={{ borderBottomWidth: "1px" }}
@@ -68,18 +68,18 @@ const ServiceItem = ({ service }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center cursor-pointer">
+      <div className="flex justify-between items-center cursor-pointer text-[#1B8733]">
         <Link href={`/services/${service.slug}`}>
-          <span className="text-gray-800">{service.title}</span>
+          <span className=" hover:bg-gray-300x">{service.title}</span>
         </Link>
         {hasSubservices && (
-          <span onClick={toggleSubservices} className="text-gray-500 text-xl">
+          <span onClick={toggleSubservices} className=" text-xl">
             {isOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
           </span>
         )}
       </div>
-      {isOpen && hasSubservices && (
-        <div className="ml-4 mt-1 flex flex-col space-y-1">
+      {isOpen && hasSubservices && (  
+        <div className="ml-4 mt-1 flex flex-col space-y-2 ">
           {service.subservices.map((subservice) => (
             <ServiceItem key={subservice._id} service={subservice} />
           ))}

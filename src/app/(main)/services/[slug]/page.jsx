@@ -27,8 +27,8 @@ const ServiceDetailPage = async ({ params }) => {
         // overflow-y-scroll
       >
         <div key={serviceDetails.slug}>
-          <h1 className="text-3xl font-bold py-10">{serviceDetails.title}</h1>
-          <p className="text-[#5A5A5A] pb-4">{serviceDetails.description}</p>
+          <h1 className="text-3xl font-bold py-10">{serviceDetails?.title}</h1>
+          <p className="text-[#5A5A5A] pb-4">{serviceDetails?.description}</p>
 
           <div className="w-full h-fit">
             <img
