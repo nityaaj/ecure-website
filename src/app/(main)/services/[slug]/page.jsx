@@ -23,7 +23,7 @@ const ServiceDetailPage = async ({ params }) => {
         />
       </div>
       <main
-        className="flex-1 p-4  mb-10"
+        className="flex-1 p-4 mb-10"
         // overflow-y-scroll
       >
         <div key={serviceDetails.slug}>
@@ -40,6 +40,12 @@ const ServiceDetailPage = async ({ params }) => {
           <PortableText
             key={serviceDetails.slug}
             value={serviceDetails.content}
+            listNestingMode="html"
+            components={{
+              list: ({ children }) => <ul className="list-disc ml-10">{children}</ul>,
+              listItem: ({ children }) => <li>{children}</li>,
+              block: ({ children }) => <div className="py-4">{children}</div>,
+            }}
           />
 
           {serviceDetails.subservices && (
