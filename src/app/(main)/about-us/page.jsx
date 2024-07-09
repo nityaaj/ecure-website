@@ -2,7 +2,10 @@
 
 const About = () => {
     return (
-        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 my-20">
+        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 my-20" style={{
+             background: "linear-gradient(180deg, #D9D9D900 0%, #000 100%);",
+             backgroundColor: "transparent"
+        }}>
             <div>
                 <img src="aboutImg.png" />
             </div>
