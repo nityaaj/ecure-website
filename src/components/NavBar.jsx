@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function NavBar() {
   return (
     <div
-      className="max-w-[1920px] mx-auto px-4 md:px-20 h-auto text-slate-900 shadow-sm sticky top-0  "
+      className="max-w-[1920px mx-auto px-4 md:px-20 h-auto text-slate-900 shadow-sm sticky top-0 w-full z-50"
       style={{
         boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
         backdropFilter: "blur(6.7px)",
