@@ -68,9 +68,9 @@ const ServiceItem = ({ service }) => {
 
   return (
     <div>
-      <div className="flex justify-between items-center cursor-pointer text-[#1B8733]">
+      <div className="flex justify-between items-center cursor-pointer ">
         <Link href={`/services/${service.slug}`}>
-          <span className=" hover:bg-gray-300x">{service.title}</span>
+          <span className=" hover:bg-gray-600x ">{service.title}</span>
         </Link>
         {hasSubservices && (
           <span onClick={toggleSubservices} className=" text-xl">
