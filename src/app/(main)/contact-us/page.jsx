@@ -12,19 +12,19 @@ const ContactUs = () => {
     ), [])
          
     return (
-        <div className="mx-auto" >
+        <div className="mx-auto flex flex-col justify-stretch items-center" >
     
-            <div className='mx-auto text-4xl text-center font-serif font-semibold bg-[#0b525b] text-white py-9' >
+            <div className='mx-auto text-2xl md:text-4xl text-center font-serif font-semibold bg-[#0b525b] text-white py-9' >
                 WE SERVE YOU BETTER WHEN WE KNOW YOU BETTER !
             </div>
-            <div className="flex flex-col md:flex-row text-center my-10 "  style={{
+            <div className="w-full flex flex-col md:flex-row text-center my-10 "  style={{
                    boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                 backdropFilter: "blur(6.7px)",
                 background: "rgba(255, 255, 255, 0.31)"
             }}>
                 <div className=" basis-[50%] pt-8 ">
                     <div className=" py-6">
-                        <h1 className="text-3xl font-semibold font-serif"> Head Office & Lab</h1><br />
+                        <h1 className="text-2xl md:text-3xl font-semibold font-serif"> Head Office & Lab</h1><br />
                         <h1 className="text-xl font-medium"> Head Office & Lab</h1>
                         <h1>9, GIDC Industrial Estate</h1>
                         <h1>Kadi, Dist.Mehsana</h1>
@@ -43,7 +43,7 @@ const ContactUs = () => {
 
             </div>
             
-            <div className="max-w-4xl p-6 bg-rounded-lg shadow-md my-10 rounded-md sm:mx-10 bg-[#1B8733] ">
+            <div className="w-full max-w-4xl p-6 bg-rounded-lg shadow-md my-10 rounded-md sm:mx-10 bg-[#1B8733] ">
                 <div className=" w-full">
                     <h2 className="text-3xl text-center text-white font-bold font-serif mb-6"> Contact Us</h2> <br/>
                     <form action="">
