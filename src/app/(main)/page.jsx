@@ -14,16 +14,16 @@ const Hero = async () => {
   const featuredImages = await getFeaturedImages();
 
   return (
-    <main className="">
+    <main className="w-full">
       <section
         className="py-10 mx-auto min-h-[calc(100vh-150px)] flex justify-center items-center bg-[url('/desktopbg.png')] bg-cover bg-center"
       >
-        <div className="flex flex-col-reverse md:flex-row w-full gap-4 justify-center items-center px-24">
+        <div className="flex flex-col-reverse md:flex-row w-full gap-4 justify-center items-center px-4 md:px-24">
           <div className="flex flex-col justify-center items-start gap-8">
-            <span className="bg-[#B0FFD3] px-4 py-2 rounded-full leading-loose">
+            <span className="bg-[#B0FFD3] px-4 py-2 rounded-full leading-tight">
               E-Cure Environment:
             </span>
-            <h1 className="text-5xl font-semibold">
+            <h1 className="text-2xl md:text-5xl font-semibold">
               A Commitment to <br />
               <span className="text-[#007936]">Environemtally Responsible</span>
               <br />
@@ -46,7 +46,7 @@ const Hero = async () => {
           </div>
         </div>
       </section>
-      {/* <div
+      {/* <div  
         className={`h-[calc(100svh-100px)] `}
         style={{
           background: `url('/desktopbg.png') no-repeat center center`,
@@ -74,16 +74,16 @@ const Hero = async () => {
           </div>
         </div> */}
       {/* </div> */}
-      <section className="px-20" id="about">
+      <section className="px-4 md:px-20" id="about">
         <About />
       </section>
-      <section className="px-20" id="services">
+      <section className="px-4 md:px-20" id="services">
         <Services />
       </section>
       <section id="clients">
         <Clients />
       </section>
-      <section className="px-24" id="projects">
+      <section className="px-4 md:px-24" id="projects">
         <Projects />
       </section>
       <section className="md:px-24 px-8 bg-[#f4f4f6] py-4" id="gallery">
