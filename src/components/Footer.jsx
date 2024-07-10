@@ -10,12 +10,12 @@ const Footer = () => {
     return (
         <div className="mx-auto max-w-[1920px] h-auto bg-[#F6FFF8] text-slate-900 md:">
 
-            <div className="flex justify-between items-center">
+            <div className="flex flex-col md:flex-row justify-between items-center"> 
                 <div className=" px-4">
                     <img src="/logo.png" className="max-w-[154px] h-[60px] bg-transparent" />
                 </div>
 
-                <div className="text-sm h-[60px] w-[154px]">
+                <div className="text-sm h-[60px] w-[154px] hidden md:block">
                     {/* © Copyright 2023, All Rights Reserved by E-Cure Environment */}
                     <Image
                         src="/make-india-logo.png"
@@ -26,7 +26,7 @@ const Footer = () => {
                     />
                 </div>
 
-                <div className="my-2 px-4 flex gap-3">
+                <div className="my-2 px-4  gap-3 hidden md:flex">
                     <img src="/f1.png" />
                     <img src="/f2.png" />
                     <img src="/f3.png" />

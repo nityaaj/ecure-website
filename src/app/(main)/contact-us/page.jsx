@@ -14,11 +14,11 @@ const ContactUs = () => {
     return (
         <div className="mx-auto" >
     
-            <div className='mx-auto text-4xl text-center font-serif font-semibold bg-[#0b525b] text-white py-20' >
+            <div className='mx-auto text-4xl text-center font-serif font-semibold bg-[#0b525b] text-white py-9' >
                 WE SERVE YOU BETTER WHEN WE KNOW YOU BETTER !
             </div>
-            <div className="flex text-center my-10 "  style={{
-                 boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
+            <div className="flex flex-col md:flex-row text-center my-10 "  style={{
+                   boxShadow: "0 4px 30px rgba(0, 0, 0, 0.1)",
                 backdropFilter: "blur(6.7px)",
                 background: "rgba(255, 255, 255, 0.31)"
             }}>
@@ -36,18 +36,18 @@ const ContactUs = () => {
 
                 <div className='basis-[50%] mx-10 my-6'>
                 <Map
-                    position={[51.505, -0.09]}
-                    zoom={10}
+                    position={[23.281676, 72.347442]}
+                    zoom={20}
                     />
                  </div>
 
             </div>
             
-            <div className="max-w-4xl p-6 bg-rounded-lg shadow-md my-10 rounded-md mx-auto bg-[#1B8733]">
+            <div className="max-w-4xl p-6 bg-rounded-lg shadow-md my-10 rounded-md sm:mx-10 bg-[#1B8733] ">
                 <div className=" w-full">
                     <h2 className="text-3xl text-center text-white font-bold font-serif mb-6"> Contact Us</h2> <br/>
                     <form action="">
-                        <div className="grid grid-cols-2 gap-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
                             <div>
                                 <label className="block text-white text-lg font-semibold mb-2" htmlFor=""> First Name</label>

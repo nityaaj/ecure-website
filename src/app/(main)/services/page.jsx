@@ -13,7 +13,7 @@ import Card from "../../../components/Card"
 const Services = async () => {
   const featuredServices = await getFeaturedServicesList();
   return (
-    <div className="mx-auto rounded-md mb-20">
+    <div className="mx-auto rounded-md mb-20 px-4 md:px-24">
       <div className="text-center">
         <h1 className="text-3xl font-bold py-10"> Our Services</h1>
         <h1 className="text-[#5A5A5A] pb-4">
@@ -25,7 +25,7 @@ const Services = async () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {featuredServices.map((service, index) => {
           return (
             <div className="w-full h-full">
