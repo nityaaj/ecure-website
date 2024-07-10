@@ -2,14 +2,12 @@
 
 const About = () => {
     return (
-        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 my-20" style={{
-             background: "linear-gradient(180deg, #D9D9D900 0%, #000 100%);",
-             backgroundColor: "transparent"
-        }}>
+        <div className="max-w-[1920px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 my-20" 
+        >
             <div>
-                <img src="aboutImg.png" />
+                <img src="aboutImg.png"/>
             </div>
-            <div >
+            <div>
                 <h1 className=' text-[#1B8733] text-2xl font-bold my-3 ml-3'> About Us</h1>
                 <h1 className='font-sans ml-3 text-sm'> E-Cure Environment is an independent company offering high quality technical services in environmental consulting, water and wastewater treatment, field sampling, environmental testing and High quality ETP chemical. The firm is a privately held and is not a subsidiary of another company. Its product is accurate and timely technical information provided confidentially at a reasonable cost.</h1>
                 <h1 className='font-sans ml-3 text-sm mt-2'> E-Cure Environment was organized in 2014 in Chhatral, as a contracts operations company to provide water and wastewater operations and maintenance services. Subsequently, an in-house laboratory was established to support the operating functions. The majority of our clients are in the Chhatral, Vithlapur, Kadi, Ahmedabad</h1>
