@@ -8,7 +8,7 @@ import Image from "next/image"
 
 const Footer = () => {
     return (
-        <div className="mx-auto max-w-[1920px] h-auto bg-[#F6FFF8] text-slate-900">
+        <div className="mx-auto max-w-[1920px] h-auto bg-[#F6FFF8] text-slate-900 md:">
 
             <div className="flex justify-between items-center">
                 <div className=" px-4">
