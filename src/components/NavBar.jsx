@@ -2,9 +2,15 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 export default function NavBar() {
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  const variants = {
+    open: { x: 0 },
+    closed: { x: "100%" },
+  };
 
   return (
     <div
@@ -51,7 +57,7 @@ export default function NavBar() {
             {!showMobileMenu && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer"
+                className="h-6 w-6 cursor-pointer button"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -67,7 +73,7 @@ export default function NavBar() {
             {showMobileMenu && (
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 cursor-pointer"
+                className="h-6 w-6 cursor-pointer button"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -80,7 +86,7 @@ export default function NavBar() {
                 />
               </svg>
             )}
-            <div
+            {/* <div
               className={
                 "md:hidden bg-white w-3/4 sm:w-1/2 h-[350px] absolute top-[60px] z-50 shadow-md py-5 transition-all duration-500 ease-in-out " +
                 (showMobileMenu ? "visible right-0 " : "hidden -right-full")
@@ -94,6 +100,27 @@ export default function NavBar() {
                 <Link href={"/gallery"}> Gallery</Link>
                 <Link href={"/contact-us"}> Contact Us</Link>
               </div>
+            </div> */}
+            <div>
+              <motion.nav
+                variants={variants}
+                animate={showMobileMenu ? "open" : "closed"}
+                transition={{ type: "spring", stiffness: 260, damping: 20 }}
+                initial="closed"
+                className={
+                  "fixed top-[60px] right-0 h-[calc(100vh-60px)] w-64 bg-white shadow-md z-10 " +
+                  (showMobileMenu ? "visible" : "hidden")
+                }
+              >
+                <div className="flex flex-col items-center gap-5 py-10">
+                  <Link href={"/"}> Home</Link>
+                  <Link href={"/#about"}> About Us</Link>
+                  <Link href={"/services"}> Services</Link>
+                  <Link href={"/#projects"}> Projects</Link>
+                  <Link href={"/gallery"}> Gallery</Link>
+                  <Link href={"/contact-us"}> Contact Us</Link>
+                </div>
+              </motion.nav>
             </div>
           </div>
         </div>
