@@ -16,11 +16,11 @@ const Hero = async () => {
   return (
     <main className="w-full">
       <section
-        className="py-10 mx-auto min-h-[calc(100vh-150px)] flex justify-center items-center bg-[url('/desktopbg.png')] bg-cover bg-center"
+        className="py-10 mx-auto lg:min-h-[calc(100vh-150px)] flex justify-center items-center bg-[url('/desktopbg.png')] bg-cover bg-center"
       >
         <div className="flex flex-col-reverse md:flex-row w-full gap-4 justify-center items-center px-4 md:px-24">
           <div className="flex flex-col justify-center items-start gap-8">
-            <span className="bg-[#B0FFD3] px-4 py-2 rounded-full leading-tight">
+            <span className="bg-[#B0FFD3] px-4 py-2 rounded-full leading-tight ">
               E-Cure Environment:
             </span>
             <h1 className="text-2xl md:text-5xl font-semibold">
