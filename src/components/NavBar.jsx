@@ -82,13 +82,13 @@ export default function NavBar() {
             )}
             <div
               className={
-                "md:hidden bg-white w-3/4 sm:w-1/2 h-svh absolute top-[60px] z-50 shadow-md py-5 transition-all duration-500 ease-in-out " +
+                "md:hidden bg-white w-3/4 sm:w-1/2 h-[350px] absolute top-[60px] z-50 shadow-md py-5 transition-all duration-500 ease-in-out " +
                 (showMobileMenu ? "visible right-0 " : "hidden -right-full")
               }
             >
               <div className="flex flex-col items-center gap-5">
-                <Link href={"/"}> Home</Link>
-                <Link href={"/#about"}> About Us</Link>
+                <Link href={"/"} > Home</Link>
+                <Link href={"/#about"} > About Us</Link>
                 <Link href={"/services"}> Services</Link>
                 <Link href={"/#projects"}> Projects</Link>
                 <Link href={"/gallery"}> Gallery</Link>

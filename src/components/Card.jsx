@@ -14,10 +14,11 @@ const Card = ({
             }}
         >
             <img src={cardImage} className="rounded-md aspect-square" />
-            <div className="absolute w-full h-full top-0 bottom-0 left-0 right-0" style={{
-                background: "linear-gradient(180deg, #D9D9D900 0%, #000 100%);",
-                backgroundColor: "transparent",
-            }} />
+            <div className="absolute w-full h-full top-0 bottom-0 left-0 right-0"
+                style={{
+                    background: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%);",
+                    backgroundColor: "transparent",
+                }} />
             <p
                 className="absolute text-white bottom-[5%] left-[5%]"
             >

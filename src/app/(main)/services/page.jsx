@@ -13,7 +13,7 @@ import Card from "../../../components/Card"
 const Services = async () => {
   const featuredServices = await getFeaturedServicesList();
   return (
-    <div className="mx-auto rounded-md mb-20 px-4 md:px-24">
+    <div className="mx-auto rounded-md mb-20 px-4 ">
       <div className="text-center">
         <h1 className="text-3xl font-bold py-10"> Our Services</h1>
         <h1 className="text-[#5A5A5A] pb-4">

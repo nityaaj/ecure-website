@@ -12,7 +12,7 @@ const ServicesSideBar = ({ services }) => {
     <div className="p-4">
       <div className="flex w-full justify-between items-center md:block">
         <h2 className="font-semibold text-2xl  mb-2">Our Services</h2>
-        <span className="text-2xl" onClick={() => setIsOpen(!isOpen)}>
+        <span className="text-2xl md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
         </span>
       </div>
