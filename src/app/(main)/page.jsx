@@ -19,13 +19,13 @@ const Hero = async () => {
         className="py-10 mx-auto lg:min-h-[calc(100vh-150px)] flex justify-center items-center bg-[url('/desktopbg.png')] bg-cover bg-center"
       >
         <div className="flex flex-col-reverse md:flex-row w-full gap-4 justify-center items-center px-4 md:px-24">
-          <div className="flex flex-col justify-center items-start gap-8">
+          <div className="flex flex-col justify-center items-start gap-8 w-full ">
             <span className="bg-[#B0FFD3] px-4 py-2 rounded-full leading-tight ">
               E-Cure Environment:
             </span>
             <h1 className="text-2xl md:text-5xl font-semibold">
               A Commitment to <br />
-              <span className="text-[#007936]">Environemtally Responsible</span>
+              <span className="text-[#007936]">Environmentally Responsible</span>
               <br />
               Operations
             </h1>
@@ -41,7 +41,7 @@ const Hero = async () => {
           </div>
           <div className="md:min-w-[500px]">
             <div className="rounded-tl-[20%] rounded-br-[20%] overflow-hidden">
-              <img src="heroimg.png" className=" h-full w-full" />
+              <img src="heroimg.png" className="h-full w-full" />
             </div>
           </div>
         </div>
