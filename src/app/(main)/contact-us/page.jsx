@@ -24,7 +24,7 @@ const ContactUs = () => {
                 backdropFilter: "blur(6.7px)",
                 background: "rgba(255, 255, 255, 0.31)"
             }}>
-                <div className=" basis-[50%] pt-8 ">
+                <div className="basis-[50%] pt-8 ">
                     <div className=" py-6">
                         <h1 className="text-2xl md:text-3xl font-semibold font-serif"> Head Office & Lab</h1><br />
                         <h1 className="text-xl font-medium"> Head Office & Lab</h1>
@@ -47,7 +47,7 @@ const ContactUs = () => {
             
             <div className="w-full max-w-4xl p-6 bg-rounded-lg shadow-md my-10 rounded-md sm:mx-10 bg-[#1B8733]">
                 <div className=" w-full">
-                    <h2 className="text-3xl text-center text-white font-bold font-serif mb-6"> Contact Us</h2> <br/>
+                    <h2 className="text-3xl text-center text-white font-bold font-serif"> Contact Us</h2> <br/>
                     <form action="">
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
 
@@ -63,7 +63,7 @@ const ContactUs = () => {
 
                             <div>
                                 <label className="block text-white text-lg font-semibold mb-2" htmlFor=""> Email address</label>
-                                <input placeholder="jone.01@gmail.com" className="w-full px-3 py-2 border border-green-600 rounded-lg bg-white focus:outline-none  focus:border-slate-900" type="text" />
+                                <input placeholder="jone.doe@gmail.com" className="w-full px-3 py-2 border border-green-600 rounded-lg bg-white focus:outline-none  focus:border-slate-900" type="text" />
                             </div>
 
                             <div>

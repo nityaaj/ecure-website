@@ -117,7 +117,7 @@ export default function NavBar() {
                   <Link href={"/#about"}> About Us</Link>
                   <Link href={"/services"}> Services</Link>
                   <Link href={"/#projects"}> Projects</Link>
-                  <Link href={"/gallery"}> Gallery</Link>
+                  <Link href={"/gallery?type=All"}> Gallery</Link>
                   <Link href={"/contact-us"}> Contact Us</Link>
                 </div>
               </motion.nav>
