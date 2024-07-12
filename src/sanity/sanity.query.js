@@ -2,6 +2,8 @@ import { groq } from "next-sanity";
 import client from "./sanity.client";
 import { cache } from "../lib/cache";
 
+const revalidate = 60; // 24 hours
+
 export const getFeaturedImages = async () => {
     const query = groq`*[_type == "Gallery" && "Featured" in tags] {
         title,
@@ -10,7 +12,11 @@ export const getFeaturedImages = async () => {
         date
         }`;
 
-    const data = await client.fetch(query);
+    const data = await client.fetch(query, {
+        next: {
+            revalidate
+        }
+    });
     const images = data.map((doc) => {
         return {
             title: doc.title,
@@ -29,7 +35,12 @@ export const getAllImages = async (tag) => {
         tags
         }`;
 
-    const params = { tag };
+    const params = {
+        tag,
+        next: {
+            revalidate
+        }
+    };
 
     const data = await client.fetch(query, params);
     const images = data.map((doc) => {
@@ -45,7 +56,11 @@ export const getAllImageTags = cache(async () => {
     const query = groq`*[_type == "Gallery"] {
         tags
       }`;
-    const documents = await client.fetch(query);
+    const documents = await client.fetch(query, {
+        next: {
+            revalidate
+        }
+    });
     const tags = documents.map((doc) => doc.tags).flat();
     const uniqueTags = [...new Set(tags)];
 
@@ -61,7 +76,11 @@ export const getAllServicesList = cache(async () => {
         description,
         "imageUrl": image.asset->url,
       }`;
-    const documents = await client.fetch(query);
+    const documents = await client.fetch(query, {
+        next: {
+            revalidate
+        }
+    });
     console.log(documents);
     return documents;
 }, ["/services", "getAllServicesList"], {
@@ -75,7 +94,11 @@ export const getFeaturedServicesList = async () => {
         description,
         "imageUrl": image.asset->url,
       }`;
-    const documents = await client.fetch(query);
+    const documents = await client.fetch(query, {
+        next: {
+            revalidate
+        }
+    });
     return documents;
 }
 
@@ -104,7 +127,7 @@ export const getServicesDetails = async (slug) => {
           "imageUrl": image.asset->url
         }
       }[0]`;
-    const params = { slug }
+    const params = { slug, next: { revalidate } };
     const documents = await client.fetch(query, params);
 
     return documents;
@@ -121,6 +144,10 @@ export const getServicesList = async () => {
             title,
             }
       }`;
-    const documents = await client.fetch(query);
+    const documents = await client.fetch(query, {
+        next: {
+            revalidate
+        }
+    });
     return documents;
 }
