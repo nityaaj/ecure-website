@@ -25,15 +25,19 @@ const Services = async () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
         {featuredServices.map((service, index) => {
           return (
-            <div className="w-full h-full">
+            <div className="w-full h-full top-0 bottom-0 left-0 right-0 shadow-md rounded-md overflow-hidden relative z-0" 
+            style={{
+              background: "linear-gradient(180deg, #D9D9D900 0%, #000 100%);",
+              backgroundColor: "transparent",
+            }}>
               <ServiceCardComponent
                 key={index}
                 image={service.imageUrl}
                 title={service.title}
-                subTitlte={service.description}
+                subTitle={service.description}
                 buttonText="Read More"
                 buttonLink={`/services/${service.slug}`}
               />
@@ -69,10 +73,10 @@ function ServiceCardComponent({
     //   {/* </div> */}
     // </div>
 
-    <Card 
-       cardImage={image}
-       cardTitle={title}
-       cardLink={buttonLink}
+    <Card
+      cardImage={image}
+      cardTitle={title}
+      cardLink={buttonLink}
 
     />
   );

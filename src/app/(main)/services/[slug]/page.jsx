@@ -17,7 +17,7 @@ const ServiceDetailPage = async ({ params }) => {
       className="flex flex-col md:flex-row w-full h-full max-w-screen-xl mx-auto"
     // max-h-svh overflow-hidden
     >
-      <div className="h-fit md:h-svh w-full md:w-64 bg-gray-100 space-y-2 ">
+      <div className="h-fit md:h-[1000px] w-full md:w-[300px] bg-gray-100 space-y-2 ">
         <ServicesSideBar
           services={services}
         // selectedServiceId={serviceDetails._id}

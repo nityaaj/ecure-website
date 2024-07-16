@@ -6,14 +6,14 @@ import "leaflet-defaulticon-compatibility/dist/leaflet-defaulticon-compatibility
 export default function MyMap(props) {
     const { position, zoom } = props
 
-    return <MapContainer className="h-[40vh]" center={position} zoom={zoom} scrollWheelZoom={false}>
+    return <MapContainer className="h-[60vh] rounded-xl" center={position} zoom={zoom} scrollWheelZoom={false}>
         <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
         <Marker position={position}>
             <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+               E-Cure Environment.
             </Popup>
         </Marker>
     </MapContainer>
