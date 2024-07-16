@@ -11,16 +11,13 @@ const ServicesSideBar = ({ services }) => {
   return (
     <div className="p-4">
       <div className="flex w-full justify-between items-center md:block">
-        <h2 className="font-semibold text-2xl  mb-2">Our Services</h2>
+        <h2 className="font-semibold text-2xl rounded-lg px-2 py-1 mb-2 ">Our Services</h2>
         <span className="text-2xl md:hidden" onClick={() => setIsOpen(!isOpen)}>
           {isOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
         </span>
       </div>
-      <div
-        className={"border-b border-gray-300 md:block" + (isOpen ? " block" : " hidden")}
-        style={{ borderBottomWidth: "1px" }}
-      />
-      <div className={"md:space-y-2 md:block" + (isOpen ? " block" : " hidden")}>
+
+      <div className={"md:space-y-2 md:block bg-[#E2E4E3] rounded-lg my-3 p-3 " + (isOpen ? " block" : " hidden")}>
         {serviceTree.map((service) => (
           <ServiceItem key={service._id} service={service} />
         ))}
@@ -70,8 +67,8 @@ const ServiceItem = ({ service }) => {
   };
 
   return (
-    <div>
-      <div className="flex justify-between items-center cursor-pointer ">
+    <>
+      <div className="flex justify-between items-center cursor-pointer p-1 hover:bg-[#BFE4BB] rounded-lg px-2">
         <Link href={`/services/${service.slug}`}>
           <span className=" hover:bg-gray-600x ">{service.title}</span>
         </Link>
@@ -79,15 +76,22 @@ const ServiceItem = ({ service }) => {
           <span onClick={toggleSubservices} className=" text-xl">
             {isOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
           </span>
+
         )}
       </div>
       {isOpen && hasSubservices && (
-        <div className="ml-4 mt-1 flex flex-col space-y-2 ">
+        <div className="ml-4 flex flex-col">
           {service.subservices.map((subservice) => (
-            <ServiceItem key={subservice._id} service={subservice} />
+            <div className="flex flex-col items-stretch p-1">
+              <ServiceItem key={subservice._id} service={subservice} />
+              <div
+                className={"border-b border-gray-300 md:block" + (isOpen ? " block" : " hidden")}
+                style={{ borderBottomWidth: "1px" }}
+              />
+            </div>
           ))}
         </div>
       )}
-    </div>
+    </>
   );
 };
