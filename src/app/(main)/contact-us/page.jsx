@@ -79,11 +79,11 @@ const ContactUs = () => {
                     <div className=" py-24">
                         <h1 className="text-2xl md:text-3xl font-semibold font-serif "> Head Office & Lab</h1><br />
                         <h1 className="text-xl font-medium"> Head Office & Lab</h1>
-                        <h1>9, GIDC Industrial Estate</h1>
-                        <h1>Kadi, Dist.Mehsana</h1>
-                        <h1>North Gujarat, , Mehsana, Gujarat - 382715.</h1>
-                        <h1> +9198790 59339</h1>
-                        <h1> kadi@e-cure-environment.com</h1>
+                        <h1>FF-6-7, Vraj Arcade</h1>
+                        <h1>Near Sundek laminates</h1>
+                        <h1>Chhatral-Mehsana highway, Rajpur (N.G.) - 382715</h1>
+                        <h1> +91 98790 59339</h1>
+                        <h1> ecure.erl@gmail.com, chirag.ecure@gmail.com</h1>
                     </div>
                 </div>
 
