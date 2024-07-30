@@ -42,6 +42,7 @@ export default function NavBar() {
             <Link href={"/services"}> Services</Link>
             <Link href={"/#projects"}> Projects</Link>
             <Link href={"/gallery?type=All"}> Gallery</Link>
+            <Link href={"/go-green"}>Go Green</Link>
           </div>
           <Link href={"/contact-us"}>
             <div className="">
@@ -119,6 +120,7 @@ export default function NavBar() {
                   <Link href={"/#projects"}> Projects</Link>
                   <Link href={"/gallery?type=All"}> Gallery</Link>
                   <Link href={"/contact-us"}> Contact Us</Link>
+                  <Link href={"/go-green"}> Go Green</Link>
                 </div>
               </motion.nav>
             </div>

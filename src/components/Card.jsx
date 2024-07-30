@@ -24,7 +24,7 @@ const Card = ({
             >
                 {cardTitle}
             </p>
-            {/* </div> */}
+           
         </div>
     )
 }
