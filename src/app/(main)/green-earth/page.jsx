@@ -1,6 +1,6 @@
 import React from "react";
 
-const GoGreenPage = () => {
+const GreenEarthPage = () => {
   return (
     <div>
       <div className="lg:h-96 lg:w-full md:h-96 md:w-full sm:h-40 sm:w-full relative text-center flex justify-center items-center">
@@ -361,4 +361,4 @@ const GoGreenPage = () => {
   );
 };
 
-export default GoGreenPage;
+export default GreenEarthPage;
