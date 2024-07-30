@@ -10,7 +10,7 @@ const ContactUs = () => {
             ssr: false
         }
     ), [])
-
+ 
     return (
         <div className="mx-auto flex flex-col items-center justify-center"  >
 
@@ -81,9 +81,10 @@ const ContactUs = () => {
                         <h1 className="text-xl font-medium"> Head Office & Lab</h1>
                         <h1>FF-6-7, Vraj Arcade</h1>
                         <h1>Near Sundek laminates</h1>
-                        <h1>Chhatral-Mehsana highway, Rajpur (N.G.) - 382715</h1>
-                        <h1> +91 98790 59339</h1>
-                        <h1> ecure.erl@gmail.com, chirag.ecure@gmail.com</h1>
+                        <h1>Chhatral-Mehsana highway, </h1>
+                        <h1>Rajpur (N.G.) - 382715</h1>
+                        <h1>+91 98790 59339</h1>
+                        <h1>ecure.erl@gmail.com, chirag.ecure@gmail.com</h1>
                     </div>
                 </div>
 
