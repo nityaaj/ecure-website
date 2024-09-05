@@ -9,15 +9,24 @@ const ServicesSideBar = ({ services }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="p-4">
-      <div className="flex w-full justify-between items-center md:block">
-        <h2 className="font-semibold text-2xl rounded-lg px-2 py-1 mb-2 ">Our Services</h2>
-        <span className="text-2xl md:hidden" onClick={() => setIsOpen(!isOpen)}>
+    <div className="p-4 bg-[#F5F5F5] rounded-lg w-full max-w-[300px]">
+      <div className="w-full">
+        <h2 className="font-bold text-2xl mb-4 text-left">Our Services</h2>
+        <span
+          className="text-2xl md:hidden cursor-pointer"
+          onClick={() => setIsOpen(!isOpen)}
+        >
           {isOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
         </span>
       </div>
 
-      <div className={"md:space-y-2 md:block bg-[#E2E4E3] rounded-lg my-3 p-3 " + (isOpen ? " block" : " hidden")}>
+      <div
+        className={
+          "space-y-2 bg-[#E2E4E3] rounded-lg p-3 transition-all duration-300 " +
+          (isOpen ? "block" : "hidden md:block")
+        }
+        style={{ maxHeight: "calc(100vh - 200px)", overflowY: "auto" }} 
+      >
         {serviceTree.map((service) => (
           <ServiceItem key={service._id} service={service} />
         ))}
@@ -68,26 +77,30 @@ const ServiceItem = ({ service }) => {
 
   return (
     <>
-      <div className="flex justify-between items-center cursor-pointer p-1 hover:bg-[#BFE4BB] rounded-lg px-2">
+      <div
+        className={`flex justify-between items-center cursor-pointer px-4 py-2 my-2 bg-[#F5F5F5] hover:bg-[#BFE4BB] rounded-lg shadow-sm transition-all duration-200 ${
+          hasSubservices ? "border-l-4 border-[#8DC88B]" : ""
+        }`}
+        onClick={toggleSubservices}
+      >
         <Link href={`/services/${service.slug}`}>
-          <span className=" hover:bg-gray-600x ">{service.title}</span>
+          <span className="font-medium text-lg text-left">{service.title}</span>
         </Link>
         {hasSubservices && (
-          <span onClick={toggleSubservices} className=" text-xl">
+          <span className=" text-xl text-right">
             {isOpen ? <RiArrowUpSLine /> : <RiArrowDownSLine />}
           </span>
-
         )}
       </div>
+
       {isOpen && hasSubservices && (
-        <div className="ml-4 flex flex-col">
+        <div className="ml-6 flex flex-col space-y-1 transition-all duration-200">
           {service.subservices.map((subservice) => (
-            <div className="flex flex-col items-stretch p-1">
+            <div
+              key={subservice._id}
+              className="flex flex-col items-stretch overflow-hidden"
+            >
               <ServiceItem key={subservice._id} service={subservice} />
-              <div
-                className={"border-b border-gray-300 md:block" + (isOpen ? " block" : " hidden")}
-                style={{ borderBottomWidth: "1px" }}
-              />
             </div>
           ))}
         </div>
